@@ -61,7 +61,40 @@ nav a:hover{
 	top: 18%;
 	left: 21%;
 	width: 50%;
-	height: 70%;
+	height: auto;
+}
+
+#logged_in{
+	color: white;
+	text-decoration: none;
+	font-size: 130%;
+	font-weight: bolder;
+	display: inline-flex;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+ul{
+	list-style: none;
+	border-left: 6px solid rgb(20, 82, 102);
+}
+
+ul a{
+	text-decoration: none;
+	color: black;
+	margin-left: -30px;
+}
+
+ul a:hover{
+	font-weight: bolder;
+	color: rgb(0, 42, 82);
+}
+
+footer{
+	position: absolute;
+	font-size: 12px;
+	color: rgba(0,0,0,0.2);
+	bottom: 0%;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
