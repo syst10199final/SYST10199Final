@@ -97,4 +97,37 @@ footer{
 	bottom: 0%;
 }
 
+.employee-listing {
+    padding: 4px 4px 8px 4px;
+    border: 2px solid rgb(20, 82, 102);
+    border-radius: 8px;
+}
+
+.employee-name {
+    display: inline-block;
+    min-width: 256px;
+    max-width: 350px;
+}
+
+.button-container {
+    float: right;
+}
+
+.employee-edit-form-container {
+    position: absolute;
+    bottom: 0;
+    margin: 8px 0px 8px 0px;
+    padding: 4px;
+    border: 2px solid rgb(20, 82, 102);
+    border-radius: 8px;
+}
+
+.employee-schedules {
+    display: none;
+    margin: 8px 0px 0px 0px;
+    padding: 4px;
+    border: 2px solid rgb(20, 82, 102);
+    border-radius: 8px;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
