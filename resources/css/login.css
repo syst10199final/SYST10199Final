@@ -94,7 +94,7 @@ footer{
 	position: absolute;
 	font-size: 12px;
 	color: rgba(0,0,0,0.2);
-	bottom: 0%;
+	bottom: -100px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');

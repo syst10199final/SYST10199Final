@@ -36,12 +36,12 @@
     <head>
         <meta charset="utf-8">
         <title>Calendar</title>
-        <link type="text/css" rel="stylesheet" href="css/Calendar.css"/>
-        <script type="text/javascript" src="Calendar.js"></script>
+        <link type="text/css" rel="stylesheet" href="resources/css/Calendar.css"/>
+        <script type="text/javascript" src="resources/js/Calendar.js"></script>
     </head>
     <body>
         <nav>
-            <img id="logo" src="images/Logo.svg" alt="logo" draggable="false">
+            <img id="logo" src="resources/images/Logo.svg" alt="logo" draggable="false">
 <!-- 	The nav buttons do not need to be here as the user would need to log in first anyways -->
             <section id = "login">
                 <a>Log in</a>
