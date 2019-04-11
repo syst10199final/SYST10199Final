@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Delete a TO-DO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="resources/css/master.css">
+    </head>
+    <body>
+        <nav>
+            <img id="logo" src="resources/images/Logo.svg" alt="logo" draggable="false">	
+	</nav>
+        <br><br><br>
+        <h1>Delete a record</h1>
+        <form name="delete" action="delete.php" method="POST">
+            Select the option that you want to delete a record by-<br>
+            <select name="deleteby">
+                <option value="description">Description</option>
+                <option value="priority">Priority</option>
+                <option value="due_date">Due Date</option>
+            </select><br><br>
+            Value to be deleted:<input type="text" name="condition"><br><br>
+            <input type="submit" Value="Delete">
+            <br><br>
+             <button  id="a"><a id="a" href="employee.php">Go Back</a></button>
+            
+        </form>
+    </body>
+</html>

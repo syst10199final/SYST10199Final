@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add a To-do</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="resources/css/master.css">
+    </head>
+    <body>
+        <nav>
+            <img id="logo" src="resources/images/Logo.svg" alt="logo" draggable="false">
+				
+	</nav>
+        <br><br><br><br>
+        <form name="todo" action="insert.php" method="POST">
+            Add a description:
+            <input type="text" name="description"><br><br>
+            Select a priority: <select name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br><br>
+            Choose the due date:<input type="date" name="deadline"><br><br>
+            <input type="submit" value="Add"><br><br><br>
+            <button  id="a"><a id="a" href="employee.php">Go Back</a></button>
+        </form>
+    </body>
+</html>
