@@ -1,0 +1,170 @@
+#container{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    font-size: 32px;
+    width: 350px;
+    height: 360px;
+}
+#container>div{
+    padding: 0;
+    margin-bottom: 10px;
+}
+#month{
+    margin: 5px;
+}
+#dates>table>tr>td{
+    padding: 5px;
+    border: 1px dashed lightblue;
+    border-radius: 2px;
+}
+#dates>table>tr>td:hover{
+    border: 1px solid lightblue;
+    border-radius: 2px;
+    background-color: lightblue;
+}
+#schedule{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 370px;
+    height: 340px;
+}
+#events{
+    margin: 0;
+    padding-inline-start: 0;
+    border-left: 0;
+}
+#lb1{
+    display: inline-block;
+    background-color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 320px;
+    height: 25px;
+    border: 1px solid lightgray;
+    margin: 0;
+}
+#lb2{
+    display: inline-block;
+    background-color: lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 320px;
+    height: 25px;
+    border: 1px solid lightgray;
+    margin: 0;
+}
+
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+body{
+font-family: 'Raleway', sans-serif;
+}
+
+#logo{
+	position: absolute;
+	left: 1%;
+	top: 1%;
+	width: 13%;
+	height: 100%;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+nav{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	height: 10%;
+	width: 100%;
+	background-color: rgb(20, 82, 102);
+}
+
+nav a{
+	color: white;
+	text-decoration: none;
+	font-size: 130%;
+	font-weight: bolder;
+	display: inline-flex;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+nav a:hover{
+	color: rgb(200, 200, 200);
+}
+
+#login{
+	position: absolute;
+	right: 5%;
+	top: 35%;
+}
+
+#buttons{
+	display: inline-flex;
+	justify-content: space-around;
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	left: 15%;
+	top: 35%;
+}
+
+.page-wrapper{
+	position: absolute;
+	padding: 2% 5%;
+	border-radius: 20px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.4);
+	top: 18%;
+	left: 21%;
+	width: 50%;
+	height: auto;
+}
+
+#logged_in{
+	color: white;
+	text-decoration: none;
+	font-size: 130%;
+	font-weight: bolder;
+	display: inline-flex;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+ul{
+	list-style: none;
+	border-left: 6px solid rgb(20, 82, 102);
+}
+
+ul a{
+	text-decoration: none;
+	color: black;
+	margin-left: -30px;
+}
+
+ul a:hover{
+	font-weight: bolder;
+	color: rgb(0, 42, 82);
+}
+
+footer{
+	position: absolute;
+	font-size: 12px;
+	color: rgba(0,0,0,0.2);
+	bottom: 0%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');

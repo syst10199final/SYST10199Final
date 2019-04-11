@@ -1,0 +1,7 @@
+[11-Apr-2019 01:26:15 America/Toronto] PHP Fatal error:  Cannot use [] for reading in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/Calendar.php on line 37
+[11-Apr-2019 03:29:32 America/Toronto] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/Calendar.php on line 38
+[11-Apr-2019 05:21:34 America/Toronto] PHP Fatal error:  Can't use function return value in write context in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/CalendarMod.php on line 28
+[11-Apr-2019 05:21:55 America/Toronto] PHP Fatal error:  Using $this when not in object context in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/CalendarMod.php on line 16
+[11-Apr-2019 05:38:43 America/Toronto] PHP Parse error:  syntax error, unexpected '/' in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/Calendar.php on line 1
+[11-Apr-2019 05:40:05 America/Toronto] PHP Parse error:  syntax error, unexpected '/' in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/Calendar.php on line 1
+[11-Apr-2019 08:04:55 America/Toronto] PHP Parse error:  syntax error, unexpected '/' in /home2/wantenaw/public_html/WebProgramming/Group Project/WP - Phase 2/Calendar.php on line 1
