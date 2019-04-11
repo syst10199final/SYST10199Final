@@ -16,7 +16,7 @@ require("connect.php");
     <body>
         <?php
         try {
-            $dbh = new PDO("mysql:host=localhost;dbname=martinaj_TrueBlu", $user, $passwd);
+            $dbConn = new PDO("mysql:host=localhost;dbname=martinaj_TrueBlu", $user, $passwd);
         } catch (PDOException $e) {
             echo 'Connection error: ' . $e->getMessage();
         }
@@ -24,7 +24,7 @@ require("connect.php");
         if (isset($_POST['description'])) {
 
             $command = "insert into toDoList (Username, Description, Priority, Due_Date) values (?,?,?,?)"; //set up command"
-            $stmt = $dbh->prepare($command); //prepare PDO statement ";
+            $stmt = $dbConn->prepare($command); //prepare PDO statement ";
             $paramArray = array($_SESSION['username'], $_POST['description'], $_POST['priority'], $_POST['deadline']);
             $execOk = $stmt->execute($paramArray); //execute the statement  "
             if ($execOk) { //Check if error executing query   "

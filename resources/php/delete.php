@@ -25,7 +25,7 @@ $usr = $_SESSION['username'];
 
         <?php
         try {
-            $dbh = new PDO("mysql:host=localhost;dbname=martinaj_TrueBlu", $user, $passwd);
+            $dbConn = new PDO("mysql:host=localhost;dbname=martinaj_TrueBlu", $user, $passwd);
         } catch (PDOException $e) {
             echo 'Connection error: ' . $e->getMessage();
         }
@@ -42,7 +42,7 @@ $usr = $_SESSION['username'];
             $command = "DELETE FROM toDoList WHERE referee_count = $value and username = '$usr'"; //set up command"
         }
 
-        $stmt = $dbh->prepare($command); //prepare PDO statement ";
+        $stmt = $dbConn->prepare($command); //prepare PDO statement ";
         // $params = array($_POST['deleteby'], $_POST['condition']);
         $execOk = $stmt->execute(); //execute the statement  "
 

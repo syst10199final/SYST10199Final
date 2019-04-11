@@ -159,3 +159,11 @@ span.psw {
      width: 50%;
   }
 }
+
+#employee-login-form-container {
+    float: left;
+}
+
+#manager-login-form-container {
+    float: right;
+}

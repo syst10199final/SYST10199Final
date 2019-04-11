@@ -5,5 +5,14 @@
         <data xmlns="http://www.netbeans.org/ns/php-project/1">
             <name>SYST10199Final</name>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Essa</word>
+            <word>Knott</word>
+            <word>Shoeb</word>
+            <word>Tahir</word>
+            <word>TrueBlu</word>
+            <word>Wantenaar</word>
+            <word>Willem</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>

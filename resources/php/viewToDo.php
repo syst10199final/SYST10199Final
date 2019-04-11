@@ -22,7 +22,7 @@ require("connect.php");
         <br><br><br><br><br>
         <?php
         try {
-            $dbh = new PDO("mysql:host=localhost;dbname=martinaj_TrueBlu", $user, $passwd);
+            $dbConn = new PDO("mysql:host=localhost;dbname=martinaj_TrueBlu", $user, $passwd);
         } catch (PDOException $e) {
             echo 'Connection error: ' . $e->getMessage();
         }
@@ -31,7 +31,7 @@ require("connect.php");
             $loggedInUser = $_SESSION['username'];
 
         $command = "SELECT Description, Priority, Due_Date from toDoList where Username = '$loggedInUser' ";
-        $stmt = $dbh->prepare($command); //prepare PDO statement ";
+        $stmt = $dbConn->prepare($command); //prepare PDO statement ";
         $execOk = $stmt->execute(); //execute the statement  "
         echo '<table><th>Task</th><th>Priority</th><th>Due Date</th>';
         if ($execOk) { //Check if error executing query   "

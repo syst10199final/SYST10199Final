@@ -11,9 +11,9 @@ require("connect.php");
     <head>
         <meta charset="UTF-8">
         <title>Manage Employees</title>
-        <link rel="stylesheet" type="text/css" href="resources/css/master.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/employees.css">
-        <script type="text/javascript" src="resources/js/employee_manager.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/master.css">
+        <link rel="stylesheet" type="text/css" href="../css/employees.css">
+        <script type="text/javascript" src="../js/employee_manager.js"></script>
     </head>
     <body>
         <?php
@@ -36,8 +36,7 @@ require("connect.php");
 
         switch ($modifyEmployeeAction) {
             case "add":
-                $addSql = "INSERT INTO user_accounts (Name, Email) VALUES (:modifyEmployeeName, :modifyEmployeeEmail)";
-                echo $addSql;
+                $addSql = "INSERT INTO employees (Name, Email) VALUES (:modifyEmployeeName, :modifyEmployeeEmail)";
                 $addStatement = $dbConn->prepare($addSql);
                 $addStatement->bindParam(":modifyEmployeeName", $modifyEmployeeName);
                 $addStatement->bindParam(":modifyEmployeeEmail", $modifyEmployeeEmail);
@@ -50,8 +49,7 @@ require("connect.php");
                 }
                 break;
             case "edit":
-                $updateSql = "UPDATE user_accounts SET Name = :modifyEmployeeName, Email = :modifyEmployeeEmail WHERE ID = :modifyEmployeeID";
-                echo $updateSql;
+                $updateSql = "UPDATE employees SET Name = :modifyEmployeeName, Email = :modifyEmployeeEmail WHERE ID = :modifyEmployeeID";
                 $updateStatement = $dbConn->prepare($updateSql);
                 $updateStatement->bindParam(":modifyEmployeeName", $modifyEmployeeName);
                 $updateStatement->bindParam(":modifyEmployeeEmail", $modifyEmployeeEmail);
@@ -65,7 +63,7 @@ require("connect.php");
                 }
                 break;
             case "delete":
-                $deleteSql = "DELETE FROM user_accounts WHERE ID = :modifyEmployeeID";
+                $deleteSql = "DELETE FROM employees WHERE ID = :modifyEmployeeID";
                 $deleteStatement = $dbConn->prepare($deleteSql);
                 $deleteStatement->bindParam(":modifyEmployeeID", $modifyEmployeeID);
                 $deleteExecOk = $deleteStatement->execute();
@@ -82,7 +80,7 @@ require("connect.php");
         }
 
         // Prepare SELECT statement
-        $selectSql = "SELECT ID, Name, Email, Schedules, Manager FROM user_accounts";
+        $selectSql = "SELECT ID, Name, Email, Schedules FROM employees";
         $selectStatement = $dbConn->prepare($selectSql);
         $selectExecOk = $selectStatement->execute();
 
