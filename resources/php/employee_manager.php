@@ -11,9 +11,9 @@ require("connect.php");
     <head>
         <meta charset="UTF-8">
         <title>Manage Employees</title>
-        <link rel="stylesheet" type="text/css" href="resources/css/master.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/employees.css">
-        <script type="text/javascript" src="resources/js/employee_manager.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/master.css">
+        <link rel="stylesheet" type="text/css" href="../css/employees.css">
+        <script type="text/javascript" src="../js/employee_manager.js"></script>
     </head>
     <body>
         <?php
@@ -105,7 +105,7 @@ require("connect.php");
         }
         ?>
         <nav>
-            <img id="logo" src="resources/images/logo.svg" alt="logo" draggable="false">
+            <img id="logo" src="../images/logo.svg" alt="logo" draggable="false">
             <section id="buttons">
                 <a href="">Manage Schedules</a>
             </section>
