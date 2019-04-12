@@ -3,14 +3,12 @@
  * Transition page processing login data and redirecting to appropriate landing.
  * 
  * @author Essa Tahir
- * @author Jerome Martina
  */
 session_start();
 require("connect.php");
 
 try {
     $dbConn = new PDO("mysql:host=$hostname;dbname=martinaj_TrueBlu", $user, $passwd);
-    $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo 'Connection error: ' . $e->getMessage();
 }
@@ -22,6 +20,9 @@ if (isset($_POST['employee-username'])) {
     $employeePassword = $_POST['employee-password'];
 
     $_SESSION['username'] = $employeeUsername;
+    
+    $loginErrorInvalid = "Invalid login. Please try again.";
+    $loginErrorQueury = "Error accessing login server. Please try again later or contact your system administrator.";
 
     $command = "SELECT * FROM login WHERE Username = :employeeUsername AND Password = :employeePassword AND IsManager = 0";
     $stmt = $dbConn->prepare($command);
@@ -33,16 +34,13 @@ if (isset($_POST['employee-username'])) {
         // If one and only one account is found as being registered, query is
         // successful, redirect user
         if ($stmt->rowCount() == 1) {
-//            echo 'Login successful. Redirecting...';
             header("Location: employee.php");
             exit;
         } else {
-//            echo 'Invalid login. Redirecting you to login page...';
             header("Location: login.php");
             exit;
         }
     } else {
-//        echo 'Error executing query: ';
         header("Location: login.php");
         exit;
     }
@@ -54,7 +52,7 @@ if (isset($_POST['manager-username'])) {
     $managerUsername = $_POST['manager-username'];
     $managerPassword = $_POST['manager-password'];
 
-    $_SESSION['manager-username'] = $managerUsername;
+    $_SESSION['username'] = $managerUsername;
 
     $command = "SELECT * FROM login WHERE username = :managerUsername AND password = :managerPassword AND IsManager = 1";
     $stmt = $dbConn->prepare($command);
@@ -64,16 +62,13 @@ if (isset($_POST['manager-username'])) {
 
     if ($execOk) {
         if ($stmt->rowCount() == 1) {
-//            echo 'Login successful. Redirecting...';
             header("Location: manager.php");
             exit;
         } else {
-//            echo 'Invalid login. Redirecting you to login page...';
             header("Location: login.php");
             exit;
         }
     } else {
-//        echo 'Error executing query: ';
         header("Location: login.php");
         exit;
     }

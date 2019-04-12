@@ -4,6 +4,7 @@ Page handling employee management.
 @author Jerome Martina
 -->
 <?php
+session_start();
 require("connect.php");
 ?>
 <!DOCTYPE html>
@@ -17,21 +18,22 @@ require("connect.php");
     </head>
     <body>
         <?php
-        // Initialize variables to use in modification
+        // Initialize variables to use in modification.
         $modifyEmployeeAction = $_POST["employee-modify-action"];
         $modifyEmployeeID = $_POST["employee-modify-select"];
+        $nameRegexp = array("options"=>array("regexp"=>"/[\w]+/"));
         if (isset($_POST["employee-modify-name"]) && isset($_POST["employee-modify-email"])) {
-            $modifyEmployeeName = $_POST["employee-modify-name"];
+            $modifyEmployeeName = filter_input(INPUT_POST, "employee-modify-name", FILTER_VALIDATE_REGEXP, $nameRegexp);
             $modifyEmployeeEmail = filter_input(INPUT_POST, "employee-modify-email", FILTER_VALIDATE_EMAIL, FILTER_SANITIZE_EMAIL);
         }
 
-        // Connect to database
+        // Connect to database.
         try {
             $dbConn = new PDO("mysql:host=$hostname;dbname=martinaj_TrueBlu", $user, $passwd);
-            $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $ex) {
-            echo "Connection error: " . $e->getMessage() . "<br>";
-            // TODO User-friendly logging of exceptions
+            echo "Connection error: " . $e->getMessage();
+            // No more graceful methods of logging PHP exceptions are within the 
+            // scope of the class than echoing error messages out of user sight.
         }
 
         switch ($modifyEmployeeAction) {
@@ -45,7 +47,6 @@ require("connect.php");
                     echo "Successful add query.";
                 } else {
                     echo "Error executing INSERT query: " . $dbConn->errorInfo()[2];
-                    // TODO Graceful logging of exceptions
                 }
                 break;
             case "edit":
@@ -59,7 +60,6 @@ require("connect.php");
                     
                 } else {
                     echo "Error executing UPDATE query: " . $dbConn->errorInfo()[2];
-                    // TODO Graceful logging of exceptions
                 }
                 break;
             case "delete":
@@ -71,7 +71,6 @@ require("connect.php");
                     
                 } else {
                     echo "Error executing DELETE query: " . $dbConn->errorInfo()[2];
-                    // TODO Graceful logging of exceptions
                 }
                 break;
             default:
@@ -80,7 +79,7 @@ require("connect.php");
         }
 
         // Prepare SELECT statement
-        $selectSql = "SELECT ID, Name, Email, Schedules FROM employees";
+        $selectSql = "SELECT ID, Name, Email FROM employees";
         $selectStatement = $dbConn->prepare($selectSql);
         $selectExecOk = $selectStatement->execute();
 
@@ -88,31 +87,35 @@ require("connect.php");
             $employeeIDs = array();
             $employeeNames = array();
             $employeeEmails = array();
-            $employeeSchedulesArr = array();
             while ($row = $selectStatement->fetch(PDO::FETCH_ASSOC)) {
                 array_push($employeeIDs, $row['ID']);
                 array_push($employeeNames, $row['Name']);
                 array_push($employeeEmails, $row['Email']);
-                $employeeSchedulesStr = $row['Schedules'];
-                array_push($employeeSchedulesArr, $employeeSchedules);
-                $employeeSchedules = explode(",", $employeeSchedulesStr);
             }
         } else {
             echo "Error executing query: " . $dbConn->errorInfo()[2];
-            // TODO User-friendly logging of exceptions
         }
         ?>
         <nav>
-            <img id="logo" src="resources/images/logo.svg" alt="logo" draggable="false">
             <section id="buttons">
-                <a href="">Manage Schedules</a>
+                <h2 class="hidden-heading">Nav Button Container</h2>
+                <a href="CalendarMod.php">Create New Schedule</a>
+                <a href="Calendar.php">Manage Current / Past Schedules</a>
             </section>
+            <a href="../../index.html"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
             <section id="login">
-                <a>Log in</a>
+                <h2 class="hidden-heading">Logout Button Container</h2>
+                <a href="logout.php">Log Out</a>
             </section>
         </nav>
-        <main class="page-wrapper">
+        <main id="page-wrapper">
             <section id="employee-list">
+                <h2 class="hidden-heading">Employee List</h2>
+                <!--
+                Template for a listing on the roster of the Employee Manager page.
+
+                @author Jerome Martina
+                -->
                 <?php
                 for ($i = 0; $i < sizeof($employeeNames); $i++) {
                     $employeeName = $employeeNames[$i];
@@ -122,12 +125,12 @@ require("connect.php");
                 ?>
             </section>
             <div class="employee-modify-form-container">
-                <form class="employee-modify-form" method="POST" action="employee_manager.php">
+                <form method="POST" action="employee_manager.php">
                     <label>Action:</label>
                     <select id="employee-modify-action" name="employee-modify-action">
-                        <option name="employee-modify-action" value="add">Add New</option>
-                        <option name="employee-modify-action" value="edit">Edit</option>
-                        <option name="employee-modify-action" value="delete">Delete</option>
+                        <option value="add">Add New</option>
+                        <option value="edit">Edit</option>
+                        <option value="delete">Delete</option>
                     </select>
                     <span id="employee-modify-select-container">
                         <label>Employee to Edit:</label>
@@ -151,5 +154,6 @@ require("connect.php");
                 </form>
             </div>
         </main>
+        <footer>TrueBlu 2019 &#169; Essa Tahir, Gregory Knott, Jerome Martina, Mohammad Shoeb, Willem Wantenaar</footer>
     </body>
 </html>
