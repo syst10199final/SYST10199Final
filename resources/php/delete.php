@@ -19,7 +19,7 @@ Page handling deletion of TO-DOs.
     </head>
     <body>
         <nav>
-            <img id="logo" src="../images/Logo.svg" alt="logo" draggable="false">
+            <a href="employee.php"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
             <a href="../../index.html">Log Out</a>
         </nav>
         <main id="page-wrapper">

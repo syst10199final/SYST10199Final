@@ -102,7 +102,7 @@ require("connect.php");
                 <a href="CalendarMod.php">Create New Schedule</a>
                 <a href="Calendar.php">Manage Current / Past Schedules</a>
             </section>
-            <a href="../../index.html"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
+            <a href="manager.php"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
             <section id="login">
                 <h2 class="hidden-heading">Logout Button Container</h2>
                 <a href="logout.php">Log Out</a>

@@ -15,7 +15,7 @@ Page allowing for viewing of existing TO-DOs.
     </head>
     <body>
         <nav>
-            <img id="logo" src="../images/Logo.svg" alt="logo" draggable="false">
+            <a href="employee.php"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
             <section id="buttons">
                 <h2 class="hidden-heading">Nav Button Container</h2>
                 <a href="../../Pages/todo.html">Add a TO-DO</a>

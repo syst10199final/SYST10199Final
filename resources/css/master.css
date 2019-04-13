@@ -17,6 +17,8 @@ body {
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
+    box-shadow: none;
+    margin: 0% 0%;
 }
 
 nav {

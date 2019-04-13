@@ -15,7 +15,7 @@ Manager homepage.
     </head>
     <body>
         <nav>
-            <a href="manager.html"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
+            <a href="manager.php"><img id="logo" src="../images/Logo.svg" alt="logo" draggable="false"></a>
             <section id="buttons">
                 <h2 class="hidden-heading">Nav Button Container</h2>
                 <a href="employee_manager.php">Manage Current Employees</a>
