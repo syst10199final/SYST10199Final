@@ -42,7 +42,7 @@ Manager homepage.
                 <li><a href="CalendarMod.php">Manage Current / Past Schedules</a></li>
                 <!-- <li><a href="">Email Schedule</a></li>
                  This feature not demonstrable. -->
-                <li><a href="help.html">Help</a></li>
+                <li><a href="../../Pages/help.html">Help</a></li>
             </ul>
         </main>
         <footer> TrueBlu 2019 &#169; Essa Tahir, Gregory Knott, Jerome Martina, Mohammad Shoeb, Willem Wantenaar</footer>
